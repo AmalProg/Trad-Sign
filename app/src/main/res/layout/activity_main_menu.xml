@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.enib.lesbg.tradsign.MainMenu">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+
+        <Button
+            android:id="@+id/TranslatButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/tranBut"
+            android:layout_above="@+id/GameButton"
+            android:layout_alignStart="@+id/GameButton"
+            android:layout_alignEnd="@id/GameButton"/>
+
+        <Button
+            android:id="@+id/GameButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gameBut"
+            android:layout_alignBottom="@+id/ParamButton"
+            android:layout_centerHorizontal="false"
+            android:layout_marginBottom="70dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginEnd="40dp"/>
+
+        <Button
+            android:id="@+id/ParamButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/paramBut"
+            android:layout_marginBottom="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignEnd="@id/GameButton"
+            android:layout_alignStart="@+id/GameButton" />
+
+        <TextView
+            android:id="@+id/Welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:text="Bienvenue."
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true" />
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logojour"
+            android:layout_below="@+id/Welcome"
+            android:visibility="visible"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            />
+
+        <ImageView
+            android:id="@+id/TraductionIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/traduire"
+            android:layout_alignTop="@+id/TranslatButton"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignBottom="@+id/TranslatButton"
+            android:layout_toStartOf="@+id/TranslatButton" />
+
+        <ImageView
+            android:id="@+id/JouerIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/TraductionIcon"
+            android:layout_below="@+id/TranslatButton"
+            app:srcCompat="@drawable/testjour"
+            android:layout_alignBottom="@+id/GameButton"
+            android:layout_toStartOf="@+id/TranslatButton" />
+
+        <ImageView
+            android:id="@+id/ParamIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/JouerIcon"
+            android:layout_alignTop="@+id/ParamButton"
+            app:srcCompat="@drawable/parametres"
+            android:layout_alignBottom="@+id/ParamButton"
+            android:layout_toStartOf="@+id/ParamButton" />
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

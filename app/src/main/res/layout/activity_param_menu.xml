@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.enib.lesbg.tradsign.ParamMenu">
+
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/TranslatModeRadioGroup"
+            android:layout_marginTop="29dp"
+            android:text="Mode d'animation :" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thème :"
+            android:layout_marginTop="36dp"
+            android:layout_below="@+id/TranslatModeRadioGroup"
+            android:layout_alignStart="@+id/ThemeRadioGroup" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vitesse d'animation :"
+            android:layout_marginTop="23dp"
+            android:layout_below="@+id/ThemeRadioGroup"
+            android:layout_alignStart="@+id/VitesseRadioGroup" />
+
+
+        <Button
+            android:id="@+id/ValiderButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/validate"
+            android:onClick="onValiderButtonClicked"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/VitesseRadioGroup" />
+
+
+
+        <RadioGroup
+            android:id="@+id/TranslatModeRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="55dp"
+            android:checkedButton="@+id/GifBut"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/GifButP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gifMode"
+                android:onClick="onAnimButtonClicked" />
+
+            <RadioButton
+                android:id="@+id/AnimButP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/animate2DMode"
+                android:onClick="onAnimButtonClicked"/>
+
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/ThemeRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="62dp"
+            android:checkedButton="@+id/JourBut"
+            android:orientation="vertical"
+            android:layout_below="@+id/TranslatModeRadioGroup"
+            android:layout_alignStart="@+id/TranslatModeRadioGroup">
+
+            <RadioButton
+                android:id="@+id/JourBut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jour"
+                android:onClick="onRadioButtonClicked" />
+
+            <RadioButton
+                android:id="@+id/Nuit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nuit"
+                android:layout_marginTop="10dp"
+                android:onClick="onRadioButtonClicked" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/VitesseRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/ThemeRadioGroup"
+            android:layout_below="@+id/ThemeRadioGroup"
+            android:layout_marginTop="49dp"
+            android:checkedButton="@+id/NormaleBut"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/LentBut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lent"
+                android:onClick="onAnimSpeedButtonClicked" />
+
+            <RadioButton
+                android:id="@+id/NormaleBut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Normale"
+                android:onClick="onAnimSpeedButtonClicked" />
+
+            <RadioButton
+                android:id="@+id/RapideBut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rapide"
+                android:onClick="onAnimSpeedButtonClicked" />
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/sun"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:srcCompat="@drawable/sun"
+            android:visibility="visible"
+            android:layout_alignTop="@+id/ThemeRadioGroup"
+            android:layout_toEndOf="@+id/VitesseRadioGroup"
+            android:layout_marginStart="10dp" />
+
+        <ImageView
+            android:id="@+id/moon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignTop="@+id/sun"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/sun"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/moon" />
+
+        <ImageView
+            android:id="@+id/ValidationIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ValiderButton"
+            app:srcCompat="@drawable/validation"
+            android:layout_alignTop="@+id/ValiderButton"
+            android:layout_alignStart="@+id/VitesseRadioGroup"
+            android:layout_toStartOf="@+id/ValiderButton" />
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

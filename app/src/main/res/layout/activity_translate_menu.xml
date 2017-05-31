@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.enib.lesbg.tradsign.TranslateMenu">
+
+    <RelativeLayout
+        android:id="@+id/TranslateMenu"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/TraduireIcon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/TranslatButton"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@+id/TranslateModeRadioGroup"
+            app:srcCompat="@drawable/traduire"
+            android:layout_above="@+id/TranslateText" />
+
+        <RadioGroup
+            android:id="@+id/TranslateModeRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:checkedButton="@+id/GifBut">
+
+            <RadioButton
+                android:id="@+id/GifBut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gifMode"
+                android:onClick="onAnimButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/AnimBut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/animate2DMode"
+                android:onClick="onAnimButtonClicked"/>
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/TranslateText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/TranslateModeRadioGroup"
+            android:layout_marginTop="30dp"
+            android:inputType="text"
+            android:lines="1"
+            android:hint="@string/translatEditTextHint"/>
+
+        <Button
+            android:id="@+id/FindBut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TranslateText"
+            android:text="Recherchez"
+            android:onClick="onFindButtonClicked"
+            android:layout_marginStart="140dp"
+            android:layout_centerInParent="true"/>
+
+        <com.enib.lesbg.tradsign.AnimatedCharacter
+            android:id="@+id/AnimatedCharacter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/FindBut"
+            android:visibility="visible" />
+
+        <VideoView
+            android:id="@+id/GifVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/FindBut"
+            android:layout_centerHorizontal="true"
+            android:focusable="false"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/notFoundText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/FindBut"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
